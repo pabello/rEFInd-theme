@@ -11,16 +11,16 @@
 4. Create a folder named `themes` inside there.
 5. Move `rEFInd-theme` into `themes`.
 6. Open `/boot/efi/EFI/refind/refind.conf`.
-7. Add `include themes/rEFInd-theme/theme.conf` at the end of the file.
+7. Add `include themes/rEFInd-theme/theme.conf` at the end of the file.  
 
-**TLDR;**
+**TLDR;**  
 You can use this short shell script although it is not guaranteed to work correctly.
 ```
 git clone https://github.com/pabello/rEFInd-theme.git
 rm -rf rEFInd-theme/.git rEFInd-theme/README.md
 sudo mkdir /boot/efi/EFI/refind/themes
 sudo mv rEFInd-theme /boot/efi/EFI/refind/themes/rEFInd-theme
-echo 'include themes/rEFInd-theme/theme.conf' | sudo tee -a /boot/efi/EFI/refind/refind.conf
+echo -e '\n# Use custom rEFInd theme\ninclude themes/rEFInd-theme/theme.conf' | sudo tee -a /boot/efi/EFI/refind/refind.conf
 ```
 
 ## Attribution
